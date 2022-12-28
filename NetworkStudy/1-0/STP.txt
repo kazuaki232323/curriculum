@@ -1,0 +1,51 @@
+【問１】
+４つのスイッチの中、ルートブリッジになるものを選ぶ。
+　→ブリッジプライオリティを比較。一番値の低いSwitch３がルートブリッジとなる。
+
+【問２】
+各インターフェイスの通信速度からケーブルごとの通信速度とパトコストを考える。
+Switch１ーSwitch２：100Mbps　→19
+Switch２ーSwitch４：10Mbps　 →100
+Switch３ーSwitch４：10Mbps   →100
+Switch１ーSwitch３：10Mbps   →100
+
+switch１からルートブリッジであるswitch３への経路は2つあります。
+　switch１→switch３：100
+　switch１→switch２→switch４→switch３：19＋100＋100＝219
+
+よってルートパスコストの低い１つ目の経路のポートがルートポートとなる。
+
+switch２からルートブリッジであるswitch３への経路は2つあります。
+　switch２→switch１→switch３：19＋100＝119
+　switch２→switch４→switch３：100＋100＝200
+
+よってルートパスコストの低い１つ目の経路のポートがルートポートとなる。
+
+switch４からルートブリッジであるswitch３への経路は2つあります。
+　switch４→switch３：100
+　switch４→switch２→switch１→switch３：100＋19＋100＝219
+
+よってルートパスコストの低い１つ目の経路のポートがルートポートとなる。
+
+switch３はルートブリッジのため両方のポートがDPとなる。
+
+switch２-switch４間のポートには何の役割も割り振られていないため、ブリッジIDが小さい方を指定ポートとする。
+switch４のほうが値が小さいため指定ポートになる。
+よってswitch２のほうがブロッキングポートとなる。
+
+【結論】（記述方法が難しいので伝わらなかった場合は再度提出します。。。）
+Switch１
+　→F0/1：DP
+　→F0/2：RP
+
+Switch２
+　→F0/1：RP
+　→F0/2：BP
+
+Switch３
+　→E0/1：DP
+　→F0/2：DP
+
+Switch４
+　→E0/1：DP
+　→E0/2：RP

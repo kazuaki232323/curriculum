@@ -1,0 +1,21 @@
+例：MACアドレス：1111.1111.1111
+インターフェースID：13 11 11 FF FE 11 11 11
+
+
+（１）MACアドレス：AAAA.AAAA.AAAA
+   24bitに分割 ： AA AA AA FF FE AA AA AA 
+　 AAを２進数に変換：1010.1010
+   7bit目を反転：1010.1000
+ インターフェースID：A8AA.AAFF.FEAA.AAAA
+
+（２）MACアドレス：9876.5432.10FE
+   24bitに分割 ：98 76 54 FF FE 32 10 FE 
+　 98を２進数に変換：1001.1000
+   7bit目を反転：1001.1010
+ インターフェースID：9A76.54FF.FE32.10FE
+
+（３）MACアドレス：FFFF.FFFF.FFFF
+   24bitに分割 ：FF FF FF FF FE FF FF FF  
+　 FFを２進数に変換：1110.0000
+   7bit目を反転：1110.0010
+ インターフェースID：E2FF.FFFF.FEFF.FFFF

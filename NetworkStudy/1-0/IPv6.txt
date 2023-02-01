@@ -16,6 +16,6 @@
 
 （３）MACアドレス：FFFF.FFFF.FFFF
    24bitに分割 ：FF FF FF FF FE FF FF FF  
-　 FFを２進数に変換：1110.0000
-   7bit目を反転：1110.0010
- インターフェースID：E2FF.FFFF.FEFF.FFFF
+　 FFを２進数に変換：1111.1111
+   7bit目を反転：1111.1101
+ インターフェースID：FDFF.FFFF.FEFF.FFFF
